@@ -7,9 +7,14 @@ def counter_label(label):
     counter = 120
     def count():
         global counter
+
+        if counter == 0:
+            return
+
         counter = counter - 1
         label.config(text=str(counter))
         label.after(1000, count)
+
     count()
 
 root = tk.Tk()
